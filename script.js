@@ -41,3 +41,21 @@ function saveNote() {
       notesList.appendChild(div);
     });
   }
+
+  function openNote(index) {
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
+    let note = notes[index];
+    currentNoteIndex = index;
+    document.getElementById("noteTitle").value = note.title;
+    document.getElementById("noteContent").value = note.content;
+  }
+  
+  function deleteNote(index) {
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
+    notes.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(notes));
+    currentNoteIndex = null;
+    document.getElementById("noteTitle").value = "";
+    document.getElementById("noteContent").value = "";
+    loadNotes();
+  }
