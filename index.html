@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Notes App with AI Assistant</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <!-- Sidebar for Notes -->
+    <div class="sidebar">
+        <h2>Notes</h2>
+        <button onclick="newNote()">+ New Note</button>
+        <div class="notes-list" id="notesList"></div>
+    </div>
+
+    <!-- Main Text Editor -->
+    <div class="main">
+        <input type="text" id="noteTitle" placeholder="Enter note title..." oninput="saveNote()">
+        <div class="editor">
+            <textarea id="noteContent" placeholder="Write your notes here..." oninput="saveNote()"></textarea>
+        </div>
+    </div>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant">
+        <h2>AI Assistant</h2>
+        <div class="response-area" id="aiResponse">Ask a question to AI...</div>
+        <div class="input-area">
+            <input type="text" id="aiQuery" placeholder="Ask AI..." onkeypress="handleAIKeyPress(event)">
+            <button onclick="askAI()">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
