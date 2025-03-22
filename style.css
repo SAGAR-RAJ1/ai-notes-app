@@ -91,3 +91,47 @@ input {
     margin-bottom: 5px;
 }
 
+/* AI Assistant */
+.ai-assistant {
+    width: 300px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.response-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.input-area {
+    display: flex;
+    margin-top: 10px;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.input-area button {
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #0056b3;
+}
