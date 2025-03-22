@@ -102,10 +102,10 @@ Want to **improve** the project? Contributions are welcome!
 ## ⚖️ License
 This project is **open-source** under the **MIT License**.  
 
-📜 **MIT License** © 2025 **Your Name**  
+📜 **MIT License** © 2025 [**SAGAR-RAJ1**](https://github.com/SAGAR-RAJ1/ai-notes-app)  
 
 ---
 
 ### 🌟 **Star the Repo if You Like It!** ⭐  
-Let me know if you need **modifications**! 🚀🔥
+
 
