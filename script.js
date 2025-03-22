@@ -89,10 +89,19 @@ function saveNote() {
           "Error fetching AI response.";
       });
   }
-  
+
   function handleAIKeyPress(event) {
     if (event.key === "Enter") {
       event.preventDefault();
       askAI();
     }
   }
+
+  document
+  .getElementById("noteContent")
+  .addEventListener("keypress", function (event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      saveNote();
+    }
+  });
