@@ -59,3 +59,33 @@ function saveNote() {
     document.getElementById("noteContent").value = "";
     loadNotes();
   }
+
+  function askAI() {
+    let query = document.getElementById("aiQuery").value;
+    if (!query.trim()) return;
+  
+    document.getElementById("aiResponse").innerHTML = "Thinking...";
+  
+    fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={YOUR_GEMINI_API_KEY}",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: query }] }],
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        let aiResponse =
+          data.candidates?.[0]?.content?.parts?.[0]?.text ||
+          "No response received.";
+        document.getElementById("aiResponse").innerHTML =
+          marked.parse(aiResponse);
+      })
+      .catch((error) => {
+        document.getElementById("aiResponse").innerHTML =
+          "Error fetching AI response.";
+      });
+  }
