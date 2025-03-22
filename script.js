@@ -89,3 +89,10 @@ function saveNote() {
           "Error fetching AI response.";
       });
   }
+  
+  function handleAIKeyPress(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      askAI();
+    }
+  }
