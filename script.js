@@ -24,3 +24,20 @@ function saveNote() {
     localStorage.setItem("notes", JSON.stringify(notes));
     loadNotes();
   }
+
+  function loadNotes() {
+    let notesList = document.getElementById("notesList");
+    notesList.innerHTML = "";
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
+  
+    notes.forEach((note, index) => {
+      let div = document.createElement("div");
+      div.classList.add("note-item");
+      div.innerHTML = `
+              <span>${note.title || "Untitled Note"}</span>
+              <button class="delete-btn" onclick="deleteNote(${index})">X</button>
+          `;
+      div.onclick = () => openNote(index);
+      notesList.appendChild(div);
+    });
+  }
