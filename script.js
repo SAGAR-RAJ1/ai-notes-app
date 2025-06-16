@@ -67,7 +67,7 @@ function saveNote() {
     document.getElementById("aiResponse").innerHTML = "Thinking...";
   
     fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={YOUR_GEMINI_API_KEY}",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={AIzaSyCXbB3D08sl6MBy3XSkcUPiD-9suPtMZ38}",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
